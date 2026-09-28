@@ -15,4 +15,7 @@ END IF;
 END;
 /
 
+-- Données initiales
+INSERT INTO HELLOWORLD (text) VALUES ('Hello World');
+
 COMMIT;
