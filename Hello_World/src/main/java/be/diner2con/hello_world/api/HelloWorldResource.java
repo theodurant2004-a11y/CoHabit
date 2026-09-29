@@ -1,12 +1,14 @@
-package be.diner2con.hello_world;
+package be.diner2con.hello_world.api;
 
 import be.diner2con.hello_world.DAO.HelloWorldDAO;
 import be.diner2con.hello_world.Models.HelloWorld;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 @Path("/hello-world")
 public class HelloWorldResource {
@@ -26,3 +28,4 @@ public class HelloWorldResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
+}
