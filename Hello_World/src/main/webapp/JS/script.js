@@ -1,7 +1,7 @@
 
 async function loadData() {
     // Dernière partie à remplacer selon les vrais noms
-    const url = "http://localhost:8080/HelloWorld_war_exploded/api/hello-world";
+    const url = "http://localhost:8080/Hello_World_war_exploded/api/hello-world/1";
 
     try {
         const response = await fetch(url);
