@@ -19,13 +19,14 @@ public class HelloWorldResource {
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getHelloWorld(@PathParam("id") int id) {
-        HelloWorld hw = dao.get(id);
+        HelloWorld hw = HelloWorld.getHelloWorld(id, dao);
         if (hw != null) {
             return Response.status(Response.Status.OK)
                     .entity(hw)
                     .build();
         } else {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Response.Status.NOT_FOUND)
+                    .build();
         }
     }
 }
