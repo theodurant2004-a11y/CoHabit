@@ -1,4 +1,4 @@
-package be.diner2con.hello_world;
+package be.diner2con.hello_world.api;
 
 import be.diner2con.hello_world.DAO.HelloWorldDAO;
 import be.diner2con.hello_world.Models.HelloWorld;
