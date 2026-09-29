@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1a1025 0%, #000000 100%);
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#dataZone {
+    perspective: 1000px;
+}
+
+#dataZone h1 {
+    font-size: 6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    cursor: default;
+
+    background: linear-gradient(270deg, #ff007f, #7f00ff, #00ffff, #00ff00, #ffff00, #ff0000);
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation:
+            gradientFlow 3s ease infinite,
+            floatAndSpin 4s ease-in-out infinite alternate,
+            extravagantGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatAndSpin {
+    0% {
+        transform: translateY(0px) rotateX(10deg) rotateY(-15deg) scale(1);
+    }
+    100% {
+        transform: translateY(-30px) rotateX(-10deg) rotateY(15deg) scale(1.15);
+    }
+}
+
+@keyframes extravagantGlow {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.4))
+        drop-shadow(0 0 20px rgba(127, 0, 255, 0.4));
+    }
+    100% {
+        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8))
+        drop-shadow(0 0 40px rgba(255, 255, 0, 0.6))
+        drop-shadow(0 0 60px rgba(255, 0, 127, 0.8))
+        drop-shadow(-20px -20px 30px rgba(0, 255, 0, 0.5))
+        drop-shadow(20px 20px 30px rgba(127, 0, 255, 0.5));
+    }
+}
