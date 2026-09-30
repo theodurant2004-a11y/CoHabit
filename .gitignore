@@ -34,3 +34,4 @@ build/
 
 # Configuration locale Oracle
 /Hello_World/src/main/resources/META-INF/persistence.xml
+/CoHabit/src/main/resources/META-INF/persistence.xml
