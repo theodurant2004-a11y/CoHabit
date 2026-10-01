@@ -4,7 +4,7 @@ async function updateData(event) {
     event.preventDefault();
 
     const newString = document.getElementById("newString").value;
-    const url = "http://localhost:8080/Hello_World_war_exploded/api/hello-world/" + newString;
+    const url = "http://localhost:8080/Hello_World_war_exploded/api/hello-world/1";
 
     try {
         const response = await fetch(url, {
@@ -13,7 +13,7 @@ async function updateData(event) {
                 "Content-Type": "application/json",
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({ text: newString })
+            body: JSON.stringify({ id: 1, text: newString })
         });
         if (!response.ok) {
             throw new Error(`Statut de réponse : ${response.status}`);
