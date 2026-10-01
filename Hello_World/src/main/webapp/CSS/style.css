@@ -2,60 +2,98 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at center, #1a1025 0%, #000000 100%);
+    gap: 3rem;
+    background: #0d0e12;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#dataZone {
-    perspective: 1000px;
 }
 
 #dataZone h1 {
-    font-size: 6rem;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
     margin: 0;
-    cursor: default;
-
-    background: linear-gradient(270deg, #ff007f, #7f00ff, #00ffff, #00ff00, #ffff00, #ff0000);
-    background-size: 1200% 1200%;
+    text-align: center;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    animation:
-            gradientFlow 3s ease infinite,
-            floatAndSpin 4s ease-in-out infinite alternate,
-            extravagantGlow 2s ease-in-out infinite alternate;
+    animation: textFloat 4s ease-in-out infinite alternate;
 }
 
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.modern-form {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
 }
 
-@keyframes floatAndSpin {
+.modern-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modern-form input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    margin: 1.5rem 0 1rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.modern-form input[type="text"]:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.modern-form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #6366f1;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modern-form input[type="submit"]:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.modern-form input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+@keyframes textFloat {
     0% {
-        transform: translateY(0px) rotateX(10deg) rotateY(-15deg) scale(1);
+        transform: translateY(0px);
+        filter: drop-shadow(0 10px 20px rgba(99, 102, 241, 0.1));
     }
     100% {
-        transform: translateY(-30px) rotateX(-10deg) rotateY(15deg) scale(1.15);
-    }
-}
-
-@keyframes extravagantGlow {
-    0% {
-        filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.4))
-        drop-shadow(0 0 20px rgba(127, 0, 255, 0.4));
-    }
-    100% {
-        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8))
-        drop-shadow(0 0 40px rgba(255, 255, 0, 0.6))
-        drop-shadow(0 0 60px rgba(255, 0, 127, 0.8))
-        drop-shadow(-20px -20px 30px rgba(0, 255, 0, 0.5))
-        drop-shadow(20px 20px 30px rgba(127, 0, 255, 0.5));
+        transform: translateY(-12px);
+        filter: drop-shadow(0 20px 30px rgba(236, 72, 153, 0.25));
     }
 }
