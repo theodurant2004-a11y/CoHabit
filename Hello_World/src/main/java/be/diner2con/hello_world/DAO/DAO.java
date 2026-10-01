@@ -4,4 +4,5 @@ public abstract class DAO <T> {
 
     public abstract T get(int id);
 
+    public abstract boolean update(T obj);
 }

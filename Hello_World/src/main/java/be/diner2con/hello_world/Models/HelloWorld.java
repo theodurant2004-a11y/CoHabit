@@ -43,4 +43,11 @@ public class HelloWorld implements Serializable {
 
     public static HelloWorld getHelloWorld(int id, DAO<HelloWorld> hwDAO) {return hwDAO.get(id);}
 
+    public boolean update(DAO<HelloWorld> hwDAO) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("The text can't be empty.");
+        }
+        return hwDAO.update(this);
+    }
+
 }
