@@ -19,8 +19,8 @@ async function updateData(event) {
             throw new Error(`Statut de réponse : ${response.status}`);
         }
 
-        const jsonResult = await response.json();
-        console.log("Mise à jour réussie :", jsonResult);
+        console.log("Mise à jour réussie");
+        await loadData();
     } catch (e) {
         console.error(e.message);
     }
