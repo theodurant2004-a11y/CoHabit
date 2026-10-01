@@ -30,6 +30,7 @@ public class HelloWorldResource {
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response updateHelloWorld(@PathParam("id") int id, HelloWorld body) {
         body.setId(id);
         try {
